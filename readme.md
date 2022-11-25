@@ -1,0 +1,5 @@
+# Bootstrap
+
+```bash
+playwright install
+```

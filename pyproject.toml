@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "newsinslowfrenchdaemon"
+version = "0.1.0"
+description = ""
+authors = ["Jeremy Fisher <jeremyadamsfisher@gmail.com>"]
+readme = "readme.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+playwright = "^1.28.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+pull_flashcards = "daemon:main"
