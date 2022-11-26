@@ -8,6 +8,7 @@ readme = "readme.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 playwright = "^1.28.0"
+dynaconf = "^3.1.11"
 
 
 [build-system]
@@ -16,4 +17,5 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.poetry.scripts]
-pull_flashcards = "daemon:main"
+pull_flashcards = "newsinslowfrenchdaemon.daemon:main"
+push_flashcards = "newsinslowfrenchdaemon.parse_csv:main"
