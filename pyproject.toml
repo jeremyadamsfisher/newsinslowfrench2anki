@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "newsinslowfrenchdaemon"
+name = "newsinslowfrench2anki"
 version = "0.1.0"
 description = ""
 authors = ["Jeremy Fisher <jeremyadamsfisher@gmail.com>"]
@@ -19,5 +19,4 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.poetry.scripts]
-pull_flashcards = "newsinslowfrenchdaemon.daemon:main"
-push_flashcards = "newsinslowfrenchdaemon.parse_csv:main"
+pull_flashcards = "newsinslowfrench2anki.main:main"

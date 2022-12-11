@@ -3,4 +3,4 @@ headless = false
 
 [anki]
 deck_name = "French"
-collection_fp = "/Users/jeremyfisher/Library/Application Support/Anki2/User 1/collection.anki2"
+collection_fp = "~/Library/Application Support/Anki2/User 1/collection.anki2"

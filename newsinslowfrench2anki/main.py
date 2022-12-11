@@ -1,4 +1,5 @@
 import csv
+import os
 import subprocess
 import time
 from tempfile import NamedTemporaryFile
@@ -7,9 +8,15 @@ from typing import List, Tuple
 import genanki
 from anki.collection import Collection
 from anki.importing import TextImporter
+from dynaconf import Dynaconf
 from playwright.sync_api import sync_playwright
 
 from newsinslowfrenchdaemon.config import settings
+
+settings = Dynaconf(
+    envvar_prefix="DYNACONF",
+    settings_files=[".secrets.toml", "settings.toml"],
+)
 
 VocabList = List[Tuple[str, str]]
 
@@ -68,13 +75,12 @@ def get_most_recent_vocab(page) -> VocabList:
 
 
 def add_vocab_to_anki(vocab: VocabList):
-    col = Collection(settings.anki.collection_fp)
+    col = Collection(os.path.expanduser(settings.anki.collection_fp))
     try:
         deck_id = col.decks.id(settings.anki.deck_name)
     finally:
         col.close()
     deck = genanki.Deck(deck_id, settings.anki.deck_name)
-    print(f"Adding {len(vocab)} cards...")
     for french, english in vocab:
         note = genanki.Note(
             model=genanki.BASIC_AND_REVERSED_CARD_MODEL,
