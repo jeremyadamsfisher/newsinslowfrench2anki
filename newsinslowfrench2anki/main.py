@@ -7,11 +7,8 @@ from typing import List, Tuple
 
 import genanki
 from anki.collection import Collection
-from anki.importing import TextImporter
 from dynaconf import Dynaconf
 from playwright.sync_api import sync_playwright
-
-from newsinslowfrenchdaemon.config import settings
 
 settings = Dynaconf(
     envvar_prefix="DYNACONF",
