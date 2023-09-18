@@ -5,12 +5,14 @@ Lovely little script to pull the latest ["News In Slow French"](newsinslowfrench
 ## Getting started
 
 Bootstrap:
+
 ```bash
 poetry install
-playwright install
+poetry run playwright install
 ```
 
 Configure:
+
 ```
 # settings.toml
 [anki]
@@ -24,6 +26,7 @@ password = "password123"
 ```
 
 Run it:
+
 ```bash
 poetry run pull_flashcards
 ```

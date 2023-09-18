@@ -34,10 +34,9 @@ def main():
 
 
 def get_most_recent_vocab(page) -> VocabList:
-
     # Log in to News In Slow French
     page.goto(NISF_HOMEPAGE_URL)
-    page.locator("a.signin").click()
+    page.locator(".signin").click()
     page.locator(".login-username").fill(settings.nisf.username)
     page.locator(".login-password").fill(settings.nisf.password)
     page.get_by_role("button", name="Login").click()
